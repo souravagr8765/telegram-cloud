@@ -267,4 +267,4 @@ def search():   # Improve search functionality.
 
 if __name__ == '__main__':
     logging.basicConfig(filename="logs.txt", filemode='a', level=os.getenv("LOGGING_LEVEL", 'DEBUG').upper())
-    app.run(port=443, host='0.0.0.0', debug=True, ssl_context=context)
+    app.run(host='0.0.0.0', port=int(os.environ.get("PORT", 10000)), ssl_context=context)
